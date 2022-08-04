@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+body > div {
+    height: 100vh;
+    background-color: lightgray;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav > ul {
+    margin-left: auto;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+nav > ul > li {
+    list-style: none;
+    cursor: pointer;
+}
+
+nav > span {
+    padding: 1rem;
+}
+
+#app-body {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.Header {
+    margin: 20px 0px;
+}
+
+.ProductGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
