@@ -10,8 +10,13 @@ export const navbarItems = [
         label: "About",
     },
     {
-        key: "navbar-item-product",
-        name: "products",
-        label: "Products",
+        key: "navbar-item-products",
+        name: "products-list",
+        label: "Products List",
+    },
+    {
+        key: "navbar-item-shopping-cart",
+        name: "shopping-cart",
+        label: "Shopping Cart",
     },
 ]

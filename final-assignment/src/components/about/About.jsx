@@ -1,5 +1,5 @@
 import { Outlet } from "react-router"
-import { NavbarItemsAbout } from "../states/NavItemsAbout"
+import { NavbarItemsAbout } from "../../states/NavItemsAbout"
 import { Link } from "react-router-dom"
 
 export function About() {
@@ -15,9 +15,6 @@ export function About() {
         <div>
             <h1>About</h1>
             <ul>{NavbarItemsAboutSubItems}</ul>
-            {/* This element will render either <AboutCarrier> when the URL is
-            "/carrier", <AboutContact> at "/contact", <AboutTeam> at "/team",or null if it is "/"
-        */}
             <Outlet />
         </div>
     )

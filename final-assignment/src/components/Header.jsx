@@ -9,19 +9,32 @@ import { FormControlLabel } from "@mui/material"
 import { NavLink } from "../router-components/NavLink"
 
 import { Route, Routes } from "react-router-dom"
-import { About } from "./About"
+import { About } from "./about/About"
 import { navbarItems } from "../states/navItems"
-import { AboutCarrier } from "./AboutCarrier"
-import { AboutContact } from "./AboutContact"
-import { AboutTeam } from "./AboutTeam"
-import { Products } from "./Products"
+import { AboutCarrier } from "./about/AboutCarrier"
+import { AboutContact } from "./about/AboutContact"
+import { AboutTeam } from "./about/AboutTeam"
+import { Products } from "./products/Products"
+import { ShoppingCart } from "./ShoppingCart"
 
 export function Header(props) {
-    const { categories, selectedCategory, setSelectedCategory, setSorting } =
-        props
+    const {
+        categories,
+        selectedCategory,
+        setSelectedCategory,
+        setSorting,
+        products,
+        setProducts,
+        productID,
+        setProductID,
+        deleteProduct,
+        setDeleteProduct,
+    } = props
+
     const categoryChange = (event) => {
         setSelectedCategory(event.target.value)
     }
+
     const sortChange = (event) => {
         if (event.target.checked) {
             setSorting("desc")
@@ -29,6 +42,7 @@ export function Header(props) {
             setSorting("asc")
         }
     }
+
     const theNavItems = navbarItems.map((el) => {
         return (
             <li key={el.key}>
@@ -103,12 +117,25 @@ export function Header(props) {
             <div id="app-body">
                 <Routes>
                     <Route path="/" element={<div>Home</div>} />
-                    <Route path="products" element={<Products />} />
                     <Route path="/about" element={<About />}>
                         <Route path="carrier" element={<AboutCarrier />} />
                         <Route path="contact" element={<AboutContact />} />
                         <Route path="team" element={<AboutTeam />} />
                     </Route>
+                    <Route
+                        path="products-list"
+                        element={
+                            <Products
+                                products={products}
+                                setProducts={setProducts}
+                                productID={productID}
+                                setProductID={setProductID}
+                                deleteProduct={deleteProduct}
+                                setDeleteProduct={setDeleteProduct}
+                            />
+                        }
+                    />
+                    <Route path="shopping-cart" element={<ShoppingCart />} />
                 </Routes>
             </div>
         </>
